@@ -8,7 +8,7 @@ import {
   InMemoryCache,
   gql,
   ApolloProvider,
-  createHttpLink,
+  HttpLink,
   split,
 } from '@apollo/client';
 import { AllPersonsResponse } from './interfaces/graphQl.tsx';
@@ -30,7 +30,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const httpLink = createHttpLink({
+const httpLink = new HttpLink({
   uri: 'http://localhost:5000',
 });
 

@@ -26,6 +26,7 @@ const User = require('./models/user');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
+mongoose.set('debug', true);
 
 const app = express();
 const httpServer = http.createServer(app);
@@ -103,8 +104,6 @@ const start = async () => {
   } catch (error) {
     console.log(error);
   }
-
-  mongoose.set('debug', true);
 };
 
 start();
